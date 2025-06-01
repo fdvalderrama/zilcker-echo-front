@@ -1,11 +1,9 @@
-import Hero from "./views/Hero";
-import Lineup from "./views/Lineup";
+import Home from "./views/Home";
 
 function App() {
   return (
     <div>
-      <Hero />
-      <Lineup />
+      <Home />
     </div>
   );
 }

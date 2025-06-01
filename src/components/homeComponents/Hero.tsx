@@ -1,5 +1,5 @@
-import concerHero from "../assets/concert-hero.jpg";
-import Navbar from "../components/Navbar";
+import concerHero from "../../assets/concert-hero.jpg";
+import Navbar from "../Navbar";
 
 const Hero = () => {
   return (

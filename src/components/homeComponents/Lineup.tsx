@@ -1,4 +1,4 @@
-import lollapalooza from "../assets/lollapalooza.png";
+import lollapalooza from "../../assets/lollapalooza.png";
 
 const Lineup = () => {
   return (
