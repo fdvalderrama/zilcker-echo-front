@@ -21,7 +21,7 @@ const Promotion = () => {
         TAKE A LOOK OF THE FESTIVAL
       </h4>
 
-      <div className="relative flex flex-col md:flex-row justify-center gap-y-6 md:gap-y-0 md:gap-x-32 mt-10 text-white text-lg mx-12 md:mx-0">
+      <div className="relative flex flex-col md:flex-row justify-center gap-y-6 md:gap-y-0 md:gap-x-32 mt-10 text-white font-bold text-lg mx-12 md:mx-0">
         <button className="bg-[#FF6B6B] py-4 w-full md:w-52 lg:w-60 xl:py-5 xl:w-80 border border-white rounded-4xl">
           BUY TICKETS
         </button>
