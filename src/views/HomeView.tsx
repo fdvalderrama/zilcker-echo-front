@@ -4,7 +4,7 @@ import Lineup from "../components/homeComponents/Lineup";
 import Promotion from "../components/homeComponents/Promotion";
 import Sponsors from "../components/homeComponents/Sponsors";
 
-const Home = () => {
+const HomeView = () => {
   return (
     <div>
       <Hero />
@@ -16,4 +16,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HomeView;
