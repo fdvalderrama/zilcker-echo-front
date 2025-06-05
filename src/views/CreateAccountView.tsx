@@ -1,4 +1,4 @@
-import InputLila from "../components/registerComponents/InputCreateAccount";
+import InputLila from "../components/registerComponents/InputLila";
 import { useState } from "react";
 
 const CreateAccountView = () => {
