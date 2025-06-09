@@ -7,7 +7,7 @@ const TicketsView = () => {
   return (
     <div className="w-full bg-[#4B3F72] text-white overflow-hidden">
       <Navbar />
-      <div className="relative w-full md:h-64 flex justify-center items-center">
+      <div className="relative w-full h-64 flex justify-center items-center">
         <img
           className="absolute w-full h-full object-cover "
           src={concertTickets}
