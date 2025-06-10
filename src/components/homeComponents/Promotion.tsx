@@ -1,6 +1,12 @@
 import concertLights from "../../assets/concert-light.webp";
+import { useNavigate } from "react-router-dom";
 
 const Promotion = () => {
+  const navigate = useNavigate();
+  const handleNavigation = (path: string) => {
+    navigate(path);
+  };
+
   return (
     <div className="relative w-full h-screen overflow-hidden">
       <img
@@ -22,13 +28,16 @@ const Promotion = () => {
       </h4>
 
       <div className="relative flex flex-col md:flex-row justify-center gap-y-6 md:gap-y-0 md:gap-x-32 mt-10 text-white font-bold text-lg mx-12 md:mx-0">
-        <button className="bg-[#FF6B6B] py-4 w-full md:w-52 lg:w-60 xl:py-5 xl:w-80 border border-white rounded-4xl">
+        <button
+          onClick={() => handleNavigation("/getTickets")}
+          className="bg-[#FF6B6B] py-4 w-full md:w-52 lg:w-60 xl:py-5 xl:w-80 border border-white rounded-4xl cursor-pointer"
+        >
           BUY TICKETS
         </button>
-        <button className="bg-[#FF6B6B] py-4 w-full md:w-52 lg:w-60 xl:py-5 xl:w-80 border border-white rounded-4xl">
+        <button className="bg-[#FF6B6B] py-4 w-full md:w-52 lg:w-60 xl:py-5 xl:w-80 border border-white rounded-4xl cursor-pointer">
           FAQ'S
         </button>
-        <button className="bg-[#FF6B6B] py-4 w-full md:w-52 lg:w-60 xl:py-5 xl:w-80 border border-white rounded-4xl">
+        <button className="bg-[#FF6B6B] py-4 w-full md:w-52 lg:w-60 xl:py-5 xl:w-80 border border-white rounded-4xl cursor-pointer">
           GALLERY
         </button>
       </div>

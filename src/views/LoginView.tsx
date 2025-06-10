@@ -1,10 +1,15 @@
 import concertLogin from "../assets/concert-login.avif";
 import InputLila from "../components/registerComponents/InputLila";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const LoginView = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate("/createAccount");
+  };
 
   return (
     <div className="w-full h-screen text-white relative flex flex-col md:flex-row ">
@@ -32,9 +37,19 @@ const LoginView = () => {
           onChange={(e) => setPassword(e.target.value)}
         />
 
-        <button className="bg-[#FF6B6B] mx-auto rounded-2xl w-50 h-10 text-lg font-semibold mb-20">
+        <button className="bg-[#FF6B6B] mx-auto rounded-2xl w-50 h-10 text-lg font-semibold mb-3">
           Login
         </button>
+
+        <p className=" mb-20 text-sm">
+          Create account{" "}
+          <button
+            className="text-blue-400 cursor-pointer"
+            onClick={handleClick}
+          >
+            here
+          </button>
+        </p>
       </div>
     </div>
   );
