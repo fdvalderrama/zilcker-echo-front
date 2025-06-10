@@ -10,7 +10,7 @@ const Navbar = () => {
   const navigate = useNavigate();
   const handleNavigation = (path: string) => {
     navigate(path);
-    setIsOpen(false); // Close the menu after navigation
+    setIsOpen(false);
   };
 
   return (
