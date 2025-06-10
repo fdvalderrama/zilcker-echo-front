@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { User, Menu } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
