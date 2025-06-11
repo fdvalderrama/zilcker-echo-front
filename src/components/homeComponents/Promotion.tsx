@@ -17,7 +17,7 @@ const Promotion = () => {
       <div className="relative w-10/12 md:w-8/12 lg:9/12 xl:w-1/2 mx-auto aspect-video mt-20 md:mt-10">
         <iframe
           className="w-full h-full"
-          src="https://www.youtube.com/embed/Vn_rrTfKEJQ"
+          src="https://www.youtube.com/embed/XMxIqBQ-5xk"
           title="YouTube video"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         ></iframe>
