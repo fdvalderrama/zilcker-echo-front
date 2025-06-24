@@ -1,5 +1,6 @@
 import InputLila from "../components/registerComponents/InputLila";
 import { useState } from "react";
+import { saveUserApi } from "../services/UserApis";
 
 const CreateAccountView = () => {
   const [name, setName] = useState("");
@@ -10,6 +11,26 @@ const CreateAccountView = () => {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [acceptTerms, setAcceptTerms] = useState(false);
+
+  const handleSaveUser = async () => {
+    const user = { name, email, password, lastName, birthdate, phoneNumber };
+    const success = await saveUserApi(user);
+    if (success) {
+      cleanFields();
+      alert("User registered successfully!");
+    }
+  };
+
+  const cleanFields = () => {
+    setName("");
+    setEmail("");
+    setPassword("");
+    setLastName("");
+    setBirthdate("");
+    setPhoneNumber("");
+    setConfirmPassword("");
+    setAcceptTerms(false);
+  };
 
   return (
     <div className="w-full md:h-screen bg-[#4B3F72] text-white overflow-hidden">
@@ -74,7 +95,10 @@ const CreateAccountView = () => {
         </div>
       </div>
       <div className="flex justify-center">
-        <button className="bg-[#FF6B6B] mx-auto rounded-2xl w-60 h-12 text-xl font-semibold mb-20">
+        <button
+          onClick={handleSaveUser}
+          className="bg-[#FF6B6B] mx-auto rounded-2xl w-60 h-12 text-xl font-semibold mb-20"
+        >
           Register
         </button>
       </div>
