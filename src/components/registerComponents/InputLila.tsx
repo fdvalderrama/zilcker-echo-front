@@ -1,11 +1,11 @@
 import { type FC } from "react";
 
-type InputLilaProps = {
+interface InputLilaProps {
   type: string;
   placeholder: string;
   value: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-};
+}
 
 const InputLila: FC<InputLilaProps> = ({
   type,
