@@ -26,12 +26,14 @@ const LoginView = () => {
       <div className="h-8/12 md:h-screen md:w-1/2 bg-[#4B3F72] flex flex-col items-center justify-center">
         <h1 className=" font-semibold text-3xl mb-10 md:mt-30">Login</h1>
         <InputLila
+          type="email"
           placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
 
         <InputLila
+          type="password"
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
