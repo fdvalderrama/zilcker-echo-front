@@ -19,7 +19,7 @@ const CardTickets: FC<CardTicketsProps> = ({ name, price, benefits }) => {
       <div className="flex flex-col justify-center items-center w-full lg:w-1/4 font-bold mb-5 lg:mb-0">
         <h1 className="text-2xl mb-2 lg:mb-5 mt-5 lg:mt-0">{name}</h1>
         <h3 className=" mb-2 lg:mb-5 text-xl">${price}</h3>
-        <button className="bg-[#FF6B6B] rounded-2xl w-20 h-10 text-md font-semibold">
+        <button className="bg-[#FF6B6B] rounded-2xl w-20 h-10 text-md font-semibold cursor-pointer">
           Buy
         </button>
       </div>
