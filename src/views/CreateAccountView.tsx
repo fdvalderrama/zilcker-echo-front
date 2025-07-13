@@ -38,7 +38,7 @@ const CreateAccountView = () => {
   return (
     <form
       onSubmit={handleSubmit(handleSaveUser)}
-      className="w-full md:h-screen bg-[#4B3F72] text-white overflow-hidden"
+      className="w-full bg-[#4B3F72] text-white overflow-hidden"
     >
       <h4
         className="mt-7 ms-10 text-xl font-semibold cursor-pointer"
@@ -49,90 +49,83 @@ const CreateAccountView = () => {
       <h1 className="mt-5 font-bold text-center text-4xl">Create account</h1>
       <div className="flex flex-col md:flex-row justify-center mt-8 md:gap-x-30 lg:gap-x-60">
         <div className="flex flex-col mx-auto md:mx-0">
-          <InputLila<User>
+          <InputLila
+            label="Name"
             type="text"
             placeholder="Name"
-            name="name"
-            register={register}
+            {...register("name", { required: "Name is required" })}
             error={errors.name?.message}
-            validation={{ required: "Name is required" }}
           />
 
-          <InputLila<User>
+          <InputLila
+            label="Last Name"
             type="text"
             placeholder="Last Name"
-            name="lastName"
-            register={register}
+            {...register("lastName", { required: "Last name is required" })}
             error={errors.lastName?.message}
-            validation={{ required: "Last name is required" }}
           />
 
-          <InputLila<User>
+          <InputLila
+            label="Birthdate"
             type="date"
             placeholder="Birthdate"
-            name="birthdate"
-            register={register}
+            {...register("birthdate", { required: "Birthdate is required" })}
             error={errors.birthdate?.message}
-            validation={{ required: "Birthdate is required" }}
           />
 
-          <InputLila<User>
+          <InputLila
+            label="Phone Number"
             type="number"
             placeholder="Phone Number"
-            name="phoneNumber"
-            register={register}
-            error={errors.phoneNumber?.message}
-            validation={{
+            {...register("phoneNumber", {
               required: "Phone number is required",
               minLength: {
                 value: 10,
                 message: "Phone number must be at least 10 digits",
               },
-            }}
+            })}
+            error={errors.phoneNumber?.message}
           />
         </div>
         <div className="flex flex-col mx-auto md:mx-0">
-          <InputLila<User>
+          <InputLila
+            label="Email"
             type="email"
             placeholder="Email"
-            name="email"
-            register={register}
-            error={errors.email?.message}
-            validation={{
+            {...register("email", {
               required: "Email is required",
               pattern: {
                 value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
                 message: "Invalid email format",
               },
-            }}
+            })}
+            error={errors.email?.message}
           />
 
-          <InputLila<User>
+          <InputLila
+            label="Password"
             type="password"
             placeholder="Password"
-            name="password"
-            register={register}
-            error={errors.password?.message}
-            validation={{
+            {...register("password", {
               required: "Password is required",
               minLength: {
                 value: 6,
                 message: "Password must be at least 6 characters",
               },
-            }}
+            })}
+            error={errors.password?.message}
           />
 
-          <InputLila<User>
+          <InputLila
+            label="Confirm Password"
             type="password"
             placeholder="Confirm Password"
-            name="password"
-            register={register}
-            error={errors.password?.message}
-            validation={{
+            {...register("password", {
               required: "Confirm Password is required",
               validate: (value, formValues) =>
                 value === formValues.password || "Passwords do not match",
-            }}
+            })}
+            error={errors.password?.message}
           />
 
           <div className="mt-4 mx-auto mb-8">
