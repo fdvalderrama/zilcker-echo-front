@@ -1,28 +1,41 @@
-import { type FC } from "react";
+import type {
+  RegisterOptions,
+  UseFormRegister,
+  Path,
+  FieldValues,
+} from "react-hook-form";
 
-interface InputLilaProps {
+interface InputLilaProps<T extends FieldValues> {
   type: string;
   placeholder: string;
-  value: string;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  name: Path<T>;
+  register: UseFormRegister<T>;
+  validation?: RegisterOptions<T, Path<T>>;
+  error?: string;
 }
 
-const InputLila: FC<InputLilaProps> = ({
+const InputLila = <T extends FieldValues>({
   type,
   placeholder,
-  value,
-  onChange,
-}) => {
+  name,
+  register,
+  validation,
+  error,
+}: InputLilaProps<T>) => {
   return (
     <div>
       <label className="block text-white mb-2">{placeholder}</label>
       <input
-        className="bg-[#8778BA] h-12 w-80 ps-4 rounded-xl mb-7"
+        className={`bg-[#8778BA] h-12 w-80 ps-4 rounded-xl ${!error && "mb-7"}`}
         type={type}
         placeholder={placeholder}
-        value={value}
-        onChange={onChange}
+        {...register(name, validation)}
       />
+      {error && (
+        <div className=" mb-7">
+          <span className="text-red-500 text-sm">{error}</span>
+        </div>
+      )}
     </div>
   );
 };

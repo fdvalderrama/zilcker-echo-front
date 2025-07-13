@@ -1,15 +1,24 @@
+import { useForm } from "react-hook-form";
 import concertLogin from "../assets/concert-login.avif";
 import InputLila from "../components/registerComponents/InputLila";
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+type LoginData = {
+  email: string;
+  password: string;
+};
+
 const LoginView = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
   const navigate = useNavigate();
   const handleClick = () => {
     navigate("/createAccount");
   };
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<LoginData>();
 
   return (
     <div className="w-full h-screen text-white relative flex flex-col md:flex-row ">
@@ -25,18 +34,22 @@ const LoginView = () => {
 
       <div className="h-8/12 md:h-screen md:w-1/2 bg-[#4B3F72] flex flex-col items-center justify-center">
         <h1 className=" font-semibold text-3xl mb-10 md:mt-30">Login</h1>
-        <InputLila
+        <InputLila<LoginData>
           type="email"
           placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          name="email"
+          register={register}
+          validation={{ required: "Email is required" }}
+          error={errors.email?.message}
         />
 
-        <InputLila
+        <InputLila<LoginData>
           type="password"
           placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          name="password"
+          register={register}
+          validation={{ required: "Password is required" }}
+          error={errors.password?.message}
         />
 
         <button className="bg-[#FF6B6B] mx-auto rounded-2xl w-50 h-10 text-lg font-semibold mb-3">
